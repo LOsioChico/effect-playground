@@ -1,0 +1,14 @@
+{
+  "name": "effect-playground",
+  "type": "module",
+  "scripts": {
+    "todos": "bun run src/todos.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "effect": "^3.9.1"
+  }
+}
