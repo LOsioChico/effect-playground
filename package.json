@@ -2,8 +2,7 @@
   "name": "effect-playground",
   "type": "module",
   "scripts": {
-    "pokeapi": "BASE_URL=https://pokeapi.co bun run src/pokeapi/index.ts",
-    "jsonplaceholder": "JSONPLACEHOLDER_BASE_URL=https://jsonplaceholder.typicode.com bun run src/jsonplaceholder/index.ts"
+    "pokeapi": "BASE_URL=https://pokeapi.co bun run src/pokeapi/index.ts"
   },
   "devDependencies": {
     "@types/bun": "latest",
