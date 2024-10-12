@@ -2,7 +2,7 @@
   "name": "effect-playground",
   "type": "module",
   "scripts": {
-    "todos": "bun run src/todos.ts"
+    "todos": "BASE_URL=https://pokeapi.co bun run src/todos.ts"
   },
   "devDependencies": {
     "@types/bun": "latest",
