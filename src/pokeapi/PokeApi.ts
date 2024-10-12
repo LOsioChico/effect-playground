@@ -1,4 +1,4 @@
-import { Config, Context, Effect } from "effect";
+import { Config, Effect } from "effect";
 import { Schema } from "@effect/schema";
 
 import { FetchError, JsonError } from "./errors";
