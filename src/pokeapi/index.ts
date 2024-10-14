@@ -12,9 +12,10 @@ const runnable = program.pipe(Effect.provide(MainLayer));
 
 const main = runnable.pipe(
   Effect.catchTags({
-    FetchError: () => Effect.succeed("Fetch error"),
-    JsonError: () => Effect.succeed("Json error"),
-    ParseError: () => Effect.succeed("Parse error"),
+    ParseError: (error) => Effect.succeed(`Parse error - ${error.message}`),
+    RequestError: (error) => Effect.succeed(`Request error - ${error.message}`),
+    ResponseError: (error) =>
+      Effect.succeed(`Response error - ${error.message}`),
   })
 );
 
