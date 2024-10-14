@@ -1,7 +1,5 @@
 import { Config, Effect, pipe } from "effect";
-import { Schema } from "@effect/schema";
 
-import { FetchError, JsonError } from "./errors";
 import { Pokemon } from "./schemas";
 import {
   HttpClient,
@@ -19,9 +17,10 @@ export class PokeApi extends Effect.Service<PokeApi>()("PokeApi", {
 
 const getPokemonHttpClient = Effect.gen(function* () {
   const baseUrl = yield* Config.string("BASE_URL");
+  const pokemonName = yield* Effect.sync(() => process.argv[2] || "garchomp");
 
   return yield* pipe(
-    HttpClientRequest.get(`${baseUrl}/api/v2/pokemon/garchomp/`),
+    HttpClientRequest.get(`${baseUrl}/api/v2/pokemon/${pokemonName}/`),
     HttpClientRequest.setHeader("Accept", "application/json"),
     HttpClient.fetchOk,
     Effect.flatMap(HttpClientResponse.schemaBodyJson(Pokemon)),
